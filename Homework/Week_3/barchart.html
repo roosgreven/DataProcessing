@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<h1>Homework week 3, bar chart of holiday countries in 2016 of the Dutch, Roos Greven</h1>
+		<h2>Source: <a href = "https://www.cbs.nl/nl-nl/cijfers">CBS</a></h2>
+		<style>
+
+		.chart rect {
+		  fill: steelblue;
+		}
+
+		.chart text {
+		  fill: white;
+		  font: 10px sans-serif;
+		  text-anchor: end;
+		}
+
+		.bar {
+			fill: steelblue;
+		}
+
+		.axis text {
+			font: 10px sans-serif;
+		}
+
+		.axis path,
+		.axis line {
+			fill: none;
+			stroke: #000;
+			shape-rendering: crispEdges;
+		}
+
+		.x.axis path {
+			display: none;
+		}
+
+		</style>
+	</head>
+	<body>
+		<svg class = "chart"></svg>
+
+	</body>
+	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src = "barchart.js"></script>
+</html>
