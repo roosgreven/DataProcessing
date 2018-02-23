@@ -1,0 +1,26 @@
+h1 {
+	font: 25px sans-serif;
+	margin-left: 45px;
+}
+
+h2 {
+	font: 15px sans-serif;
+	margin-left: 45px;
+}
+
+.bar {
+	fill: steelblue;
+}
+
+.axis text {
+	font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+	stroke-width: 1px;
+}
+

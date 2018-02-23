@@ -1,34 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<h1>Homework week 3, bar chart of holiday countries in 2016 of the Dutch, Roos Greven</h1>
-		<h2>Source: <a href = "https://www.cbs.nl/nl-nl/cijfers">CBS</a></h2>
-		<style>
-
-		.bar {
-			fill: steelblue;
-		}
-
-		.axis text {
-			font: 10px sans-serif;
-		}
-
-		.axis path,
-		.axis line {
-			fill: none;
-			stroke: #000;
-			shape-rendering: crispEdges;
-		}
-
-		.x.axis path {
-			display: none;
-		}
-
-		</style>
+		<h1 class = "header">Bar chart of holiday destinations of the Dutch, 2016</h1>
+		<h2>Source: <a href = "http://statline.cbs.nl/Statweb/publication/?VW=T&DM=SLNL&PA=70232NED&D1=0-4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,72-74,76,78,80,82,84,86,88,90,92,94,96,98,100,102,104,106,108,110,112,114,116,152-153&D2=0,5,10,15,2,(l-2)-l&HD=151216-1040&HDR=G1&STB=T">CBS</a></h2>
+		<h2>Roos Greven, 11436700, Homework week 3</h2>
+		<script src = "http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src = "barchart.js"></script>
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
 	</head>
 	<body>
 		<svg class = "chart"></svg>
 	</body>
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	<script src = "barchart.js"></script>
 </html>
