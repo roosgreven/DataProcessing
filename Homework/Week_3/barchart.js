@@ -95,12 +95,12 @@ window.onload = function() {
 
 			// add name for y axis
 			.append("text")
-				.attr("class", "countries")
+				.attr("class", "values")
 				// rotate the text
 				.attr("transform", "rotate (-90)")
 				// set at the right position
 				.attr("y", - margin.left / 1.5)
-				.attr("x", - height + 30)
+				.attr("x", - height + 60)
 				.style("font", "18px sans-serif")
 				.text("Number of people on holidays x1000");
 			
