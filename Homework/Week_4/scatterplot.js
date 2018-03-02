@@ -5,7 +5,11 @@ Homework week 4: make an interactive scatterplot with D3.
 */
 
 window.onload = function() {
-	// set margins, width and height
+	createPlot();
+};
+
+function createPlot() {
+// set margins, width and height
 	var margin = {top: 30, right: 120, bottom: 60, left: 80},
 		width = 800 - margin.left - margin.right,
 		height = 500 - margin.top - margin.bottom,
@@ -54,10 +58,11 @@ window.onload = function() {
 			alert("error" + error);
 		};
 
-	// call function to draw scatterplot
-	drawScatterplot(data);
-		
+		// call function to draw scatterplot
+		drawScatterplot(data);
+			
 	});
+
 
 	/*
 	This function draws x and y axis and tick marks and names for both. 
@@ -128,7 +133,7 @@ window.onload = function() {
 						+ "</span><br/>Freedom: <span style='color:red'>" 
 						+ (Math.round(d.freedom * 100) / 100) + "</span>")
 					.style("left", (d3.event.pageX - 90) + "px")     
-                	.style("top", (d3.event.pageY - 77) + "px");
+	            	.style("top", (d3.event.pageY - 77) + "px");
 				})
 				.on("mouseout", function(d) {
 					tooltip.transition()
