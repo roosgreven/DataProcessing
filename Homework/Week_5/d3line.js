@@ -8,7 +8,7 @@ Homework week 5: make an interactive line graph with D3.
 window.onload = function() {
 
 // load json data
-	d3.json("data2010_2011.json", function(error, data) {
+	d3.json("data2016_2017.json", function(error, data) {
 
 		// when there is an error, throw error
 		if (error) {
