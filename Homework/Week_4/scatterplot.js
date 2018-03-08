@@ -132,8 +132,8 @@ function createPlot() {
 						+ (Math.round(d.generosity * 100) / 100) 
 						+ "</span><br/>Freedom: <span style='color:red'>" 
 						+ (Math.round(d.freedom * 100) / 100) + "</span>")
-					.style("left", (d3.event.pageX - 90) + "px")     
-	            	.style("top", (d3.event.pageY - 77) + "px");
+						.style("left", (d3.event.pageX - 90) + "px")     
+						.style("top", (d3.event.pageY - 77) + "px");
 				})
 				.on("mouseout", function(d) {
 					tooltip.transition()

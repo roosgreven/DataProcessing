@@ -3,20 +3,40 @@
 	<head>
 		<script src = "https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script src = "d3line.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel = "stylesheet" type = "text/css" href = "d3line.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 		<title>Line graph</title>
 	</head>
 
 	<body>
 
-		<h1>Line graph with the amount of asylum seekers the<br> 
-		 average temperature and the average amount of rain per <br>
-		month in 2010 and 2011</h1>
+		<h1>Line graph with the average temperature <br>
+			per month in Chicago, Vancouver and De Bilt (NL) <br> 
+			in 1985 and 2015</h1>
+ 
+		
 
+		<div class = "dropdown">
+			<button class = "btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+				Choose year
+				<span class = "caret"></span>
+			</button>
+			<ul class = "dropdown-menu">
+				<li onclick = "createPlot(85)"><a href = "#">1985</a></li>
+				<li onclick = "createPlot(15)"><a href = "#">2015</a></li>
+			</ul>
+		</div> 
+
+		<div id = "title"></div>
+		
 		<svg class = "chart"></svg>
 
+
 		<h2>Roos Greven <br>
-			Source: <a href = "http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi">KNMI</a><br>
-			<a href = "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/37943ned">CBS</a></h2>
+			Source: <a href = "https://www.wunderground.com">Weather Underground</a></h2>
 
 	</body>
 

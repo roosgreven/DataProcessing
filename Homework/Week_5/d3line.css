@@ -1,0 +1,47 @@
+/*
+Name: Roos Greven
+11436700
+Homework week 4: make an interactive scatterplot with D3. 
+Stylesheet 
+*/
+
+.dropdown {
+	margin-left: 80px;
+}
+
+h1 {
+	font: 25px sans-serif;
+	margin-left: 80px;
+}
+
+h2 {
+	font:15px sans-serif;
+	margin-left: 80px;
+}
+
+#title {
+	margin-left: 300px;
+}
+
+.axis text {
+	font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+	stroke-width: 1px;
+}
+
+.linetext {
+	font: 10px sans-serif;
+}
+
+.dateText, 
+.tempText {
+	font: 15px sans-serif;
+}
+
+
