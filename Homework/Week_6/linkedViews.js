@@ -22,13 +22,19 @@ function createPlot() {
 
 	// load in datasets with queue
 	queue()
-		.defer(d3.json, 'population17.json')
-		.defer(d3.json, 'dataEurope.json')
+		.defer(d3.json, 'inequalityEU_2005.json')
+		.defer(d3.json, 'inequalityEU_2010.json')
+		.defer(d3.json, 'inequalityEU_2012.json')
+		.defer(d3.json, 'inequalityEU_2015.json')
 		.await(createMap);
 	
 };
 
-function createMap(error, population, scatterData) {
+function createMap(error, data2005, data2010, data2012, data2015) {
+
+	if (error) {
+			alert("Error" + error);
+	};
 
 	//Width and height
 	var w = 600;
@@ -55,36 +61,62 @@ function createMap(error, population, scatterData) {
 	d3.json("https://raw.githubusercontent.com/openspending/subsidystories.eu/master/app/data/ne_50m_admin_0_countries_simplified.json", 
 		function(error, data) {
 
+		if (error) {
+			alert("Error" + error);
+		}
+
 		var allCountries = [];
 		var europeData = [];
+		var europeNames = [];
 
 		for (let i = 0; i < data.features.length; i++) {
-			allCountries.push(data.features[i].properties.admin);
+			allCountries.push(data.features[i].properties.iso_a2);
 		};
 
+		
+
 		data.features.forEach(function(element) {
-			for (let i = 0; i < scatterData.length; i ++) {
-				if (element.properties.admin == scatterData[i].country) {
-					europeData.push(element)
+			for (let i = 0; i < data2005.length; i ++) {
+				if (element.properties.iso_a2 == data2005[i].countrycode) {
+					europeData.push(element);
+					europeNames.push(element.properties.iso_a2);
 				}
 			}
 		});
-
+		
 		//Bind data and create one path per GeoJSON feature
 		svg.selectAll("path")
-			.data(europeData)
+			.data(data.features)
 			.enter()
 			.append("path")
 				.attr("d", path)
-				.attr("class", "countries")
 				.attr("id", "deselected")
-				.attr("stroke", "rgba(8, 81, 156, 0.2)")
-				.attr("fill", "rgba(8, 81, 156, 0.6)")
+				.attr("class", function(d) {
+					if (europeNames.indexOf(d.properties.iso_a2) >= 0) {
+						return "active";
+					}
+					else {
+						return "notActive";
+					}
+				})
+				.attr("stroke", "rgba(0, 0, 0, 0.2)")
+				.attr("fill", function(d) {
+					if (europeNames.indexOf(d.properties.iso_a2) >= 0) {
+						return "red";
+					}
+					else {
+						return "gray";
+					}
+				})
+
 				.on("click", function(d) {
+					if (d3.select(this).attr("class") == "notActive") {
+						return;
+					}
 					if (d3.select(this).attr("id") == "deselected") {
-						d3.selectAll(".countries")
+						d3.selectAll(".active")
 							.attr("id", "deselected")
-							.attr("fill", "rgba(8, 81, 156, 0.6)")
+							.attr("fill", "red")
 						d3.select(this)
 							.attr("id", "selected")
 							.attr("fill", "black");
@@ -92,13 +124,13 @@ function createMap(error, population, scatterData) {
 					else if (d3.select(this).attr("id") == "selected") {
 						d3.select(this)
 							.attr("id", "deselected")
-							.attr("fill", "rgba(8, 81, 156, 0.6)")
+							.attr("fill", "red")
 					}
 				});
-
 		
 	});
+	
 
 	
 		
-}
+};
