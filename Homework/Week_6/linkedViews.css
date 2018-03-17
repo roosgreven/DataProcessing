@@ -1,0 +1,69 @@
+/*
+Name: Roos Greven
+11436700
+Homework week 6: Linked views with d3.  
+Stylesheet 
+*/
+
+h2 {
+	font:15px sans-serif;
+	margin-left: 55px;
+}
+.axis text {
+	font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+	stroke-width: 1px;
+}
+
+.dot {
+  stroke: #000;
+}
+
+.tooltip {
+	position: absolute;
+	pointer-events: none;
+	font: 10px sans-serif;
+	color: #fff;
+	font-weight: bold;
+	padding: 12px;
+	background: black;	
+	border: 0px;		
+	border-radius: 2px;			
+	pointer-events: none;	
+	line-height: 1;
+}
+
+.tooltip:after {
+	box-sizing: border-box;
+	display: inline;
+	font-size: 10px;
+	width: 100%;
+	line-height: 5.2;
+	color: black;
+	content: "\25BC";
+	position: absolute;
+	text-align: left;
+	opacity: .9;
+}
+
+svg {
+	background-color: white;
+}
+
+h1 {
+	color: rgb(115, 115, 115);
+	font-size: 18px;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 0;
+	padding-bottom: 10px;
+
+}
+
+
