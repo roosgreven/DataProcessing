@@ -5,10 +5,70 @@ Homework week 6: Linked views with d3.
 Stylesheet 
 */
 
-h2 {
-	font:15px sans-serif;
-	margin-left: 55px;
+body {
+	margin-left: 30px;
 }
+
+svg {
+	background-color: white;
+}
+
+h1 {
+	color: rgb(115, 115, 115);
+	font-size: 18px;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding-bottom: 10px;
+
+}
+
+h2 {
+	font:18px sans-serif;
+}
+
+h3 {
+	color: rgb(115, 115, 115);
+	font-size: 13px;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin-left: -10px;
+	padding-bottom: 10px;
+
+}
+
+#container {
+	float:left;
+	width: 700px;
+	clear: both;
+}
+
+#title {
+	margin-left: 115px;
+	margin-top: 10px;
+	padding-bottom: 0px;
+	text-align: left;
+}
+.displayValues {
+	margin-left: 10px;
+}
+
+#linked {
+	font-size: 25px;
+	margin-top: 20px;
+}
+
+.forLegend {
+	float: right;
+	clear: both;
+}
+
+.forChart {
+	display: inline-block;
+	float:right;
+	width: 500px;
+	height: 400px;
+}
+
 .axis text {
 	font: 10px sans-serif;
 }
@@ -19,10 +79,6 @@ h2 {
 	stroke: #000;
 	shape-rendering: crispEdges;
 	stroke-width: 1px;
-}
-
-.dot {
-  stroke: #000;
 }
 
 .tooltip {
@@ -38,32 +94,4 @@ h2 {
 	pointer-events: none;	
 	line-height: 1;
 }
-
-.tooltip:after {
-	box-sizing: border-box;
-	display: inline;
-	font-size: 10px;
-	width: 100%;
-	line-height: 5.2;
-	color: black;
-	content: "\25BC";
-	position: absolute;
-	text-align: left;
-	opacity: .9;
-}
-
-svg {
-	background-color: white;
-}
-
-h1 {
-	color: rgb(115, 115, 115);
-	font-size: 18px;
-	font-family: sans-serif;
-	font-weight: bold;
-	margin: 0;
-	padding-bottom: 10px;
-
-}
-
 
