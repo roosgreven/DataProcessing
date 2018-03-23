@@ -12,8 +12,8 @@ window.onload = function() {
 
 	// load in data about inequality and GDP per capita
 	queue()
-		.defer(d3.json, 'inequalityEU.json')
-		.defer(d3.json, 'GDPperCapita.json')
+		.defer(d3.json, 'data/inequalityEU.json')
+		.defer(d3.json, 'data/GDPperCapita.json')
 		.defer(d3.json, "https://raw.githubusercontent.com/openspending/subsidystories.eu/master/app/data/ne_50m_admin_0_countries_simplified.json")
 		.await(createMap);
 };
